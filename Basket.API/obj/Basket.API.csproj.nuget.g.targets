@@ -8,5 +8,6 @@
     <Import Project="$(NuGetPackageRoot)system.text.json\8.0.5\buildTransitive\netcoreapp2.0\System.Text.Json.targets" Condition="Exists('$(NuGetPackageRoot)system.text.json\8.0.5\buildTransitive\netcoreapp2.0\System.Text.Json.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.bcl.timeprovider\8.0.1\buildTransitive\netcoreapp2.0\Microsoft.Bcl.TimeProvider.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.bcl.timeprovider\8.0.1\buildTransitive\netcoreapp2.0\Microsoft.Bcl.TimeProvider.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.apidescription.server\3.0.0\build\Microsoft.Extensions.ApiDescription.Server.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.apidescription.server\3.0.0\build\Microsoft.Extensions.ApiDescription.Server.targets')" />
+    <Import Project="$(NuGetPackageRoot)grpc.tools\2.32.0\build\Grpc.Tools.targets" Condition="Exists('$(NuGetPackageRoot)grpc.tools\2.32.0\build\Grpc.Tools.targets')" />
   </ImportGroup>
 </Project>
