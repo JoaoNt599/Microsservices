@@ -32,6 +32,10 @@
 ### Microsservice: Discount.Grpc
 
 - .NET
+- Auth
+- PostgreSQL
+- gRPC: Google Remote Procedure Call
+- Docker
 
 
 

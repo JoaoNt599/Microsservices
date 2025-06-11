@@ -13,11 +13,11 @@ services:
   pgadmin:
     image: dpage/pgadmin4
 
-  catalog.api:
+  catalogo.api:
     image: ${DOCKER_REGISTRY-}catalogapi
     build:
       context: .
-      dockerfile: Catalog.API/Dockerfile 
+      dockerfile: Catalogo.API/Dockerfile 
 
   basket.api:
     image: ${DOCKER_REGISTRY-}basketapi
