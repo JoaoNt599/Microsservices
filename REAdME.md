@@ -4,7 +4,8 @@
 
 ### Microsservice: Catalog.API:
 
-- .NET 5
+- .NET 
+- Swagger
 - JWT
 - Auth
 - MongoDB
@@ -12,16 +13,32 @@
 
 ### Microsservice: Basket.API:
 
-- .NET 5
+- .NET 
+- Swagger
 - JWT
 - Auth
 - Redis
 - Docker
 
+### Microsservice: Discount.API:
+
+- .NET
+- Swagger
+- JWT
+- Auth
+- PostgreSQL
+- Docker
+
+### Microsservice: Discount.Grpc
+
+- .NET
+
+
+
 
 dotnet new sln -n Microsservices 
-dotnet new webapi -o Catalogo.API --no-https  
-dotnet sln Microsservices.sln add Projeto.API/Projeto.API.csproj
 
-dotnet add package MongoDB.Driver
-dotnet list package
+dotnet new webapi -o Catalogo.API --no-https  
+dotnet new grpc -n GrpcServiceExample
+
+dotnet sln Microsservices.sln add Projeto.API/Projeto.API.csproj

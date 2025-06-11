@@ -70,7 +70,7 @@ namespace Catalogo.API
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
-                    Description = "Informe o token JWT no formato: Bearer {seu token}",
+                    Description = "Informe o token JWT no formato: Bearer {token}",
                     Name = "Authorization",
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey,

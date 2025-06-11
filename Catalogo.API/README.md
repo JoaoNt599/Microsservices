@@ -3,6 +3,7 @@
 ## Resources:
 
 - .NET 5
+- Swagger
 - JWT
 - Auth
 - MongoDB

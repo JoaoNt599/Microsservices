@@ -1746,11 +1746,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Catalogo\\Basket.API\\Basket.API.csproj",
+      "projectUniqueName": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Microserviços\\Basket.API\\Basket.API.csproj",
       "projectName": "Basket.API",
-      "projectPath": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Catalogo\\Basket.API\\Basket.API.csproj",
+      "projectPath": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Microserviços\\Basket.API\\Basket.API.csproj",
       "packagesPath": "C:\\Users\\joaon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Catalogo\\Basket.API\\obj\\",
+      "outputPath": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Microserviços\\Basket.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

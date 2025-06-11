@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2IZxNUEmxcULwjeYzIjhVEaMW+hvxSbtOfYXsfwsZNokVJGx//OlqqnjtcDhoHRPsf5CXutTVvFA7BTBDRRURw==",
+  "dgSpecHash": "q1xYHaNi3d4lpV4c8YQyE20ScIUtXzUfkxuhxfefxFxHtvwoM1R2u2+PPw644u4fGb/hsdhQpcQsWg8Y+/f9wA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Catalogo\\Basket.API\\Basket.API.csproj",
+  "projectFilePath": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Microserviços\\Basket.API\\Basket.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaon\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.0\\microsoft.aspnetcore.authentication.jwtbearer.5.0.0.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
