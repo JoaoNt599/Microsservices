@@ -37,6 +37,13 @@
 - gRPC: Google Remote Procedure Call
 - Docker
 
+### (Next Stage):
+
+- Order.API
+- Payment.API
+- Notification.API
+- Delivery.API
+
 
 
 
