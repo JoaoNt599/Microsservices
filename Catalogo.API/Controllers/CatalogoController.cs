@@ -34,9 +34,8 @@ namespace Catalogo.API.Controllers
         {
             var product = await _repository.GetProduct(id);
             if (product is null)
-            {
                 return NotFound();
-            }
+        
             return Ok(product);
         }
 
@@ -44,26 +43,18 @@ namespace Catalogo.API.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Product>))]
-        public async Task<ActionResult<IEnumerable<Product>>> 
-            GetProductByCategory(string category)
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductByCategory(string category)
         {
-            if (category is null)
-                return BadRequest("Invalid category");
-
             var products = await _repository.GetProductByCategory(category);
-
             return Ok(products);
         }
+
         [HttpPost]
         [ProducesResponseType(typeof(Product), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Product>> CreateProduct([FromBody] Product product)
         {
-            if (product is null)
-                return BadRequest("Invalid product");
-
             await _repository.CreateProduct(product);
-
             return CreatedAtRoute("GetProduct", new { id = product.Id }, product);
         }
 
@@ -73,8 +64,8 @@ namespace Catalogo.API.Controllers
 
         public async Task<IActionResult> UpdateProduct([FromBody] Product product)
         {
-            if (product is null)
-                return BadRequest("Invalid product");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             return Ok(await _repository.UpdateProduct(product));
         }

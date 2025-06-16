@@ -25,6 +25,9 @@ namespace Catalogo.API.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginDTO dto)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var user = _users.Find(u => u.Username == dto.Username && u.Password == dto.Password);
 
             if (user == null)
