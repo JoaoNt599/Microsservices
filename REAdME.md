@@ -43,13 +43,14 @@
 - Payment.API
 - Notification.API
 - Delivery.API
+- Customers.API
 
 
 
 
 dotnet new sln -n Microsservices 
 
-dotnet new webapi -o Catalogo.API --no-https  
+dotnet new webapi -o Project.API --no-https  
 dotnet new grpc -n GrpcServiceExample
 
-dotnet sln Microsservices.sln add Projeto.API/Projeto.API.csproj
+dotnet sln Microsservices.sln add Project.API/Project.API.csproj
