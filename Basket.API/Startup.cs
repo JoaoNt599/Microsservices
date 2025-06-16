@@ -16,6 +16,8 @@ using System.Text;
 using Basket.API.Services;
 using Microsoft.OpenApi.Models;
 using Basket.API.Repositories;
+using Basket.API.GrpcServices;
+using Discount.Grpc.Protos;
 
 namespace Basket.API
 {
@@ -37,11 +39,16 @@ namespace Basket.API
 
             services.AddStackExchangeRedisCache(options =>
             {
-                //options.Configuration = "localhost:6379";
                 options.Configuration = Configuration.GetValue<string>("CacheSettings:ConnectionString");
             });
 
             services.AddScoped<IBasketRepository, BasketRepository>();
+            services.AddScoped<DiscountGrpcService>();
+
+            services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
+                options => options.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]
+                )
+            );
 
             services.AddAuthentication(x =>
             {
