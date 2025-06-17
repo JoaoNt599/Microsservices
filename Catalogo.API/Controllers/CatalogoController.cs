@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace Catalogo.API.Controllers
 {
@@ -14,16 +16,22 @@ namespace Catalogo.API.Controllers
     public class CatalogController : ControllerBase
     {
         private readonly IProductRepository _repository;
-        public CatalogController(IProductRepository repository)
+        private readonly ILogger<CatalogController> _logger;
+        public CatalogController(IProductRepository repository, ILogger<CatalogController> logger)
         {
             _repository = repository;
+            _logger = logger;
         }
 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Product>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
+            _logger.LogInformation("Seach all products...");
+            
             var products = await _repository.GetProducts();
+            _logger.LogInformation("Return {count} products", products.Count());
+
             return Ok(products);
         }
 
@@ -32,10 +40,16 @@ namespace Catalogo.API.Controllers
         [ProducesResponseType(typeof(Product), StatusCodes.Status200OK)]
         public async Task<ActionResult<Product>> GetProductById(string id)
         {
+            _logger.LogInformation("Search ID product: {ProductId}", id);
             var product = await _repository.GetProduct(id);
+
             if (product is null)
+            {
+                _logger.LogWarning("Product ID: {ProductId} Not Found", id);
                 return NotFound();
-        
+            }
+
+            _logger.LogInformation("Product ID: {@Product}", product);
             return Ok(product);
         }
 
@@ -54,7 +68,10 @@ namespace Catalogo.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Product>> CreateProduct([FromBody] Product product)
         {
+            _logger.LogInformation("Creating new product: {@Product}", product);
             await _repository.CreateProduct(product);
+
+            _logger.LogInformation("Created product: {@Product}", product);
             return CreatedAtRoute("GetProduct", new { id = product.Id }, product);
         }
 

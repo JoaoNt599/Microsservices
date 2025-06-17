@@ -5,9 +5,11 @@
 ### Microsservice: Catalog.API:
 
 - .NET 
+- Logging
 - Swagger
 - JWT
 - Auth
+- Validators
 - MongoDB
 - Docker 
 
