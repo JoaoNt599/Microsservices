@@ -1,0 +1,116 @@
+version: '3.8'
+
+services:
+
+  catalogoapi:
+    build:
+      context: .
+      dockerfile: ./Catalogo.API/Dockerfile
+    container_name: catalogoapi
+    ports:
+      - "5000:80"
+    depends_on:
+      - mongo
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Mongo__ConnectionString=mongodb://mongo:27017
+    networks:
+      - backend
+
+  basketapi:
+    build:
+      context: .
+      dockerfile: ./Basket.API/Dockerfile
+    container_name: basketapi
+    ports:
+      - "5001:80"
+    depends_on:
+      - redis
+      - discountapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Redis__ConnectionString=redis:6379
+    networks:
+      - backend
+
+  discountapi:
+    build:
+      context: .
+      dockerfile: ./Discount.API/Dockerfile
+    container_name: discountapi
+    ports:
+      - "5002:80"
+    depends_on:
+      - postgres
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Postgres=Host=postgres;Port=5432;Username=postgres;Password=example;Database=DiscountDB
+    networks:
+      - backend
+  
+  discountgrpc:
+    build:
+      context: .
+      dockerfile: ./Discount.Grpc/Dockerfile
+    container_name: discountgrpc
+    ports:
+      - "5003:80"
+    depends_on:
+      - postgres
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Postgres=Host=postgres;Port=5432;Username=postgres;Password=example;Database=DiscountDB
+    networks:
+      - backend
+      
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - backend
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: DiscountDB
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  redis:
+    image: redis:6.0
+    container_name: msredis
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+
+  grafana:
+    image: grafana/grafana:10.0.0
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - mongo
+    networks:
+      - backend
+
+volumes:
+  mongo_data:
+  postgres_data:
+
+networks:
+  backend:

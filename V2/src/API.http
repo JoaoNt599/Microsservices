@@ -1,0 +1,7 @@
+Catalog.API: http://localhost:5000
+
+Basket.API: http://localhost:5001
+
+Discount.API: http://localhost:5003
+
+Grafana: http://localhost:3000
