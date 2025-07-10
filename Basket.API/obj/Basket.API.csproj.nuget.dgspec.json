@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Microserviços\\Basket.API\\Basket.API.csproj": {}
+    "C:\\Users\\joaon\\OneDrive\\Área de Trabalho\\Jogos\\.NET\\Microsservices\\Basket.API\\Basket.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Microserviços\\Basket.API\\Basket.API.csproj": {
+    "C:\\Users\\joaon\\OneDrive\\Área de Trabalho\\Jogos\\.NET\\Microsservices\\Basket.API\\Basket.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Microserviços\\Basket.API\\Basket.API.csproj",
+        "projectUniqueName": "C:\\Users\\joaon\\OneDrive\\Área de Trabalho\\Jogos\\.NET\\Microsservices\\Basket.API\\Basket.API.csproj",
         "projectName": "Basket.API",
-        "projectPath": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Microserviços\\Basket.API\\Basket.API.csproj",
+        "projectPath": "C:\\Users\\joaon\\OneDrive\\Área de Trabalho\\Jogos\\.NET\\Microsservices\\Basket.API\\Basket.API.csproj",
         "packagesPath": "C:\\Users\\joaon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Microserviços\\Basket.API\\obj\\",
+        "outputPath": "C:\\Users\\joaon\\OneDrive\\Área de Trabalho\\Jogos\\.NET\\Microsservices\\Basket.API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\joaon\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],

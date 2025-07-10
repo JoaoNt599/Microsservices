@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3a8GsmogGtHIJzLeZE2ogPNkN6Suxj3h++VcycKZwCK2xwSuasUqENhW1bJS3/mF/Y7voPcYEO0UYvd1RjLDSw==",
+  "dgSpecHash": "heQ3IhtAT80keRje3M7yDWjNeXwPHo2q/en3VscPSXlRDOVIflX8YwCU7dmrTIVseFtlYtgPWdBckPmjwrG8MA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joaon\\Desktop\\C#\\Microsserviços\\Microserviços\\Basket.API\\Basket.API.csproj",
+  "projectFilePath": "C:\\Users\\joaon\\OneDrive\\Área de Trabalho\\Jogos\\.NET\\Microsservices\\Basket.API\\Basket.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaon\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
@@ -144,9 +144,9 @@
     "C:\\Users\\joaon\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.threading.threadpool\\4.3.0\\system.threading.threadpool.4.3.0.nupkg.sha512",
+    "C:\\Users\\joaon\\.nuget\\packages\\system.threading.threadpool\\4.3.0\\system.threading.threadpool.4.3.0.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\joaon\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\system.xml.readerwriter\\4.3.1\\system.xml.readerwriter.4.3.1.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
