@@ -19,7 +19,9 @@ jobs:
           context: ./Catalogo.API
           file: ./Catalogo.API/Dockerfile
           push: false
-          tags: catalogoapi:latest
+          tags: |
+            catalogoapi:latest
+            catalogoapi:v${{ github.run_number }}
 
   catalogo-cd:
     name: CD - Catalogo.API
@@ -34,6 +36,9 @@ jobs:
         with:
           version: 'latest'
 
+      - name: Verify context kubectl
+        run: kubectl config current-context
+
       - name: Recreate kubeconfig
         run: echo "${{ secrets.KUBECONFIG }}" | base64 -d > ~/.kube/config
 
@@ -41,3 +46,6 @@ jobs:
         run: |
           kubectl apply -f k8s/catalogoapi/deployment.yaml
           kubectl apply -f k8s/catalogoapi/service.yaml
+
+      - name: Verify pod deploy
+        run: kubectl get pods -l app=catalogoapi
