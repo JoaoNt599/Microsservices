@@ -1,0 +1,43 @@
+name: CI-CD Microservices
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  catalogo-ci:
+    name: CI - Catalogo.API
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build image Catalogo.API
+        uses: docker/build-push-action@v5
+        with:
+          context: ./Catalogo.API
+          file: ./Catalogo.API/Dockerfile
+          push: false
+          tags: catalogoapi:latest
+
+  catalogo-cd:
+    name: CD - Catalogo.API
+    needs: [catalogo-ci]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout manifests
+        uses: actions/checkout@v4
+
+      - name: Config kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'latest'
+
+      - name: Recreate kubeconfig
+        run: echo "${{ secrets.KUBECONFIG }}" | base64 -d > ~/.kube/config
+
+      - name: Deploy Kubernetes
+        run: |
+          kubectl apply -f k8s/catalogoapi/deployment.yaml
+          kubectl apply -f k8s/catalogoapi/service.yaml
