@@ -36,8 +36,8 @@ jobs:
         with:
           version: 'latest'
 
-      - name: Verify context kubectl
-        run: kubectl config current-context
+      # - name: Verify context kubectl
+      #   run: kubectl config current-context
 
       - name: Recreate kubeconfig
         run: echo "${{ secrets.KUBECONFIG }}" | base64 -d > ~/.kube/config
@@ -47,5 +47,5 @@ jobs:
           kubectl apply -f k8s/catalogoapi/deployment.yaml
           kubectl apply -f k8s/catalogoapi/service.yaml
 
-      - name: Verify pod deploy
-        run: kubectl get pods -l app=catalogoapi
+      # - name: Verify pod deploy
+      #   run: kubectl get pods -l app=catalogoapi
